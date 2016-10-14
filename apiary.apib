@@ -1,0 +1,43 @@
+FORMAT: 1A
+HOST: http://api.birdwatch.org/
+
+# bird log API
+Record bird sightings information
+
+# Group bird 
+Access bird resources
+
+## My Birds [/birds]
+
+### Get all bird sightings [GET]
+
++ Request
+    
+    + Header
+    
+            Authorization: Basic YmFzZTY0IHVzZXI6cGFzc3dvcmQ=
+        
++ Response 200 (application/json)
+    
+            [
+                {
+
+                 location: 'Prospect Park, Brooklyn',
+                 date:  '2016-04-29T07:00'
+                 imageUrl: 'myimage.jpg',
+                 description: 'blue wings and breast, white speckled tale',
+                 tags: [
+                    chirpy
+                ]
+                },
+                {
+
+                location: 'ColdSpring, NY',
+                date:  '2015-07-21T07:00'
+                imageUrl: 'myimage1.jpg',
+                description: 'large, speckled brown and white',
+                tags: [
+                    long tail
+                ]
+                }
+            ]
