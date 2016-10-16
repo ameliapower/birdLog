@@ -7,37 +7,57 @@ Record bird sightings information
 # Group bird 
 Access bird resources
 
-## My Birds [/birds]
+## My Birds [/birds{?page,size}] 
+
 
 ### Get all bird sightings [GET]
+
++ Parameters
+    + page([required, number, 1])... page number
+    + size([required, number, 10])... size of page
 
 + Request
     
     + Header
     
             Authorization: Basic YmFzZTY0IHVzZXI6cGFzc3dvcmQ=
+            x-api-version: 1.0
         
 + Response 200 (application/json)
+
+    + Header
     
-            [
+            ETag: "euyfewuyfvew76f7"
+            cache-control: max-age=600
+        
+    + Body
+    
+            {
+                "page" :
                 {
-
-                 location: 'Prospect Park, Brooklyn',
-                 date:  '2016-04-29T07:00'
-                 imageUrl: 'myimage.jpg',
-                 description: 'blue wings and breast, white speckled tale',
-                 tags: [
-                    chirpy
-                ]
+                    "number": 1,
+                    "size": 10,
+                    "totalPages": 10
                 },
-                {
-
-                location: 'ColdSpring, NY',
-                date:  '2015-07-21T07:00'
-                imageUrl: 'myimage1.jpg',
-                description: 'large, speckled brown and white',
-                tags: [
-                    long tail
+                birds:
+                [
+                    {
+                        "location": "Prospect Park, Brooklyn",
+                        "date":  "2016-04-29T07:00",
+                        "imageUrl": "http://cdn111.picsart.com/213832565005202.jpg?r1024x1024",
+                        "description": "large white breasted bird and yellow beak",
+                        "tags": [
+                            "chirpy"
+                        ]
+                    },
+                    {
+                        "location": "ColdSpring, NY",
+                        "date":  "2015-07-21T07:00",
+                        "imageUrl": "http:https://cdn118.picsart.com/213996044001202.jpg?r1024x1024",
+                        "description": "large grey and white spread wings and red tail",
+                        "tags":  [
+                            "long red tail"
+                        ]
+                    }
                 ]
-                }
-            ]
+            }
