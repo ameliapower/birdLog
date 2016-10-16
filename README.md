@@ -1,2 +1,2 @@
 # birdLog
-# BirdLog API - testing Apiary.io Blueprint
+BirdLog API - Blueprint project in [Apiary.io](http://apiary.io)
